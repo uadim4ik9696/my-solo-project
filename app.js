@@ -1,6 +1,7 @@
 require('@babel/register');
 require('dotenv').config();
 
+const dbConect = require('./db/config/dbConect');
 const express = require('express');
 const morgan = require('morgan');
 const path = require('path');
@@ -13,12 +14,23 @@ app.use(express.json());
 app.use(morgan('dev'));
 app.use(express.static(path.join(process.cwd(), 'public')));
 
-// const registration = require('./src/routes/registration.js');
+const work = require('./src/routes/work.router.js');
+const home = require('./src/routes/home.router.js');
+const registration = require('./src/routes/registration.router.js');
+const login = require('./src/routes/login.router.js');
+const auth = require('./src/routes/auth.router.js');
 
-// app.use('/registration', registration);
+dbConect()
+
+app.use('/home', home);
+app.use('/work', work);
+app.use('/registration', registration);
+app.use('/login', login);
+app.use('/auth', auth);
+
 
 app.get('/', (req, res) => {
-  // res.send('HELO');
+  res.redirect('/home');
 });
 
 app.listen(PORT, () => {

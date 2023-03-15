@@ -5,11 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node app. js",
-    "dev": "nodemon app.js --ext jsx, js, json",
-    "db-create": "npx sequelize db:create",
-    "db-drop": "npx sequelize db:drop",
-    "db-migrate": "npx sequelize db:migrate",
-    "db-undo-migrate": "npx sequelize db:migrate:undo:all"
+    "dev": "nodemon app.js --ext jsx, js, json"
   },
   "repository": {
     "type": "git",

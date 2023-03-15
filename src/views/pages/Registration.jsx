@@ -4,35 +4,31 @@ const Layout = require('../Layout');
 module.exports = function Registration() {
   return (
     <Layout>
-      <form>
-        <h2>REGISTRATION</h2>
-
+      <form className="registration-form">
+        <h3>Registration</h3>
         <input
-          placeholder="Name"
+          required="required"
           type="text"
-          className="form-control"
-          id="exampleInputEmail1"
-          aria-describedby="emailHelp"
+          name="name"
+          placeholder="Name"
+          id="username"
         />
-
         <input
-          placeholder="Email"
+          required="required"
           type="email"
-          className="form-control"
-          id="exampleInputEmail1"
-          aria-describedby="emailHelp"
+          name="email"
+          placeholder="Email"
+          id="username"
         />
-
         <input
-          placeholder="Password"
+          required="required"
           type="password"
-          className="form-control"
-          id="exampleInputPassword1"
+          name="password"
+          placeholder="Password"
+          id="password"
         />
 
-        <button type="submit" className="btn btn-primary">
-          Submit
-        </button>
+        <button className="registration_submit">Submit</button>
       </form>
     </Layout>
   );

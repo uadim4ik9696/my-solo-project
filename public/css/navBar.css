@@ -1,0 +1,57 @@
+#logo {
+  background: none;
+  font-size: 30px;
+  font-weight: 900;
+  /* border: 2px solid #f09819; */
+  color: #ff512f;
+  width: max-content;
+  background: linear-gradient(90deg, #f2881f, #b5147a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* color: #ff512f; */
+  display: table;
+  /* margin: 20px auto; */
+}
+#logo:hover {
+  text-shadow: 1px 1px 50px  #f2881f;
+}
+
+.navBar {
+  margin-top: 50px;
+  height: 60px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 800px;
+  background-color: rgba(255, 255, 255, 0.13);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 40px rgba(26, 23, 53, 0.6);
+}
+
+.navBarList {
+  height: 40px;
+  width: 130px;
+  text-decoration: none;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.07);
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: 300;
+}
+.navBarList:hover {
+  text-shadow: 1px 1px 10px  #f2881f;
+}
+.navBarList:last-child {
+  background: none;
+  width: max-content;
+}
+
+.navBarListImg {
+  height: 30px;
+  position: absolute;
+}

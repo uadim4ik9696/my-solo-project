@@ -4,19 +4,55 @@ module.exports = function Layout({ children }) {
   return (
     <html lang="en">
       <head>
+        <meta charSet="UTF-8" />
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
-          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
           rel="stylesheet"
-          integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
-          crossorigin="anonymous"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
         />
-        <link rel="stylesheet" href="/css/normalize.css" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap"
+          rel="stylesheet"
+        />
+        <link rel="stylesheet" href="../../css/background.css" />
+        <link rel="stylesheet" href="../../css/formReg.css" />
+        <link rel="stylesheet" href="../../css/navBar.css" />
         <link rel="stylesheet" href="/css/application.css" />
-        <meta charset="UTF-8" />
-        <script defer src="/js/application.js" />
-        <title>mySoloProject</title>
+
+        <script defer src="/js/authorization.js" />
+        <title>To Do</title>
       </head>
-      <body>{children}</body>
+
+      <body>
+        <nav className="navBar">
+          <a id="logo" className="navBarList" href="/home">
+            TO DO
+          </a>
+          <a className="navBarList" href="/work">
+            Work
+          </a>
+          <a className="navBarList" href="/login">
+            Log In
+          </a>
+          <a className="navBarList" href="/registration">
+            Registration
+          </a>
+          <a className="navBarList" href="#link">
+            <img className="navBarListImg" src="../../img/user.png" alt="" />
+          </a>
+        </nav>
+
+        <div className="background">
+          <div className="shape"></div>
+          <div className="shape"></div>
+        </div>
+
+        {/* <div className="body"> */}
+        {children}
+        {/* </div> */}
+      </body>
     </html>
   );
 };
