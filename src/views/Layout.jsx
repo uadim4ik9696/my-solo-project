@@ -1,6 +1,6 @@
 const React = require('react');
 
-module.exports = function Layout({ children }) {
+module.exports = function Layout({ children, user }) {
   return (
     <html lang="en">
       <head>
@@ -19,26 +19,30 @@ module.exports = function Layout({ children }) {
         <link rel="stylesheet" href="../../css/background.css" />
         <link rel="stylesheet" href="../../css/formReg.css" />
         <link rel="stylesheet" href="../../css/navBar.css" />
-        <link rel="stylesheet" href="/css/application.css" />
 
         <script defer src="/js/authorization.js" />
         <title>To Do</title>
       </head>
-
       <body>
         <nav className="navBar">
-          <a id="logo" className="navBarList" href="/home">
+          <a id="logo" className="navBarList" href="/">
             TO DO
           </a>
-          <a className="navBarList" href="/work">
-            Work
-          </a>
-          <a className="navBarList" href="/login">
-            Log In
-          </a>
-          <a className="navBarList" href="/registration">
-            Registration
-          </a>
+          {user ? (
+            <><a className="navBarList" href="/work">
+                Work
+              </a>
+              <a className="navBarList log_out" href="/logout">
+                Log Out
+              </a></>
+          ) : (
+            <><a className="navBarList" href="/login">
+                Log In
+              </a>
+              <a className="navBarList" href="/registration">
+                Registration
+              </a></>
+          )}
           <a className="navBarList" href="#link">
             <img className="navBarListImg" src="../../img/user.png" alt="" />
           </a>
@@ -48,10 +52,7 @@ module.exports = function Layout({ children }) {
           <div className="shape"></div>
           <div className="shape"></div>
         </div>
-
-        {/* <div className="body"> */}
         {children}
-        {/* </div> */}
       </body>
     </html>
   );

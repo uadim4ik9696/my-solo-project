@@ -4,8 +4,7 @@
 // module.exports = function Error({ message }) {
 //   console.log('++++++++++++++++++++++++')
 //   return (
-//     <Layout>
-//       <h1>dfsdfhgjsdhf</h1>
-//     </Layout>
+//     <p></p>
+
 //   );
 // };

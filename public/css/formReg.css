@@ -32,7 +32,7 @@ form h3 {
   line-height: 42px;
   text-align: center;
 }
-input {
+.input {
   display: block;
   height: 50px;
   width: 100%;
@@ -65,7 +65,7 @@ button:hover {
   background-color: #eae1e1;
 }
 button:active {
-  background-color: #ffd3d3;
+  background-color: #ffffff;
   font-size: 22px;
   font-weight: 300;
 }

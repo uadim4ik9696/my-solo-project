@@ -7,24 +7,27 @@ module.exports = function Registration() {
       <form className="registration-form">
         <h3>Registration</h3>
         <input
+          className="input"
           required="required"
           type="text"
           name="name"
-          placeholder="Name"
+          placeholder="name"
           id="username"
         />
         <input
+          className="input"
           required="required"
           type="email"
           name="email"
-          placeholder="Email"
+          placeholder="e-mail"
           id="username"
         />
         <input
+          className="input"
           required="required"
           type="password"
           name="password"
-          placeholder="Password"
+          placeholder="password"
           id="password"
         />
 
