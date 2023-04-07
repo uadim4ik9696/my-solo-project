@@ -26,10 +26,10 @@ module.exports = function Layout({ children, user }) {
       <body>
         <nav className="navBar">
           <a id="logo" className="navBarList" href="/">
-            TO DO
+            
           </a>
           {user ? (
-            <><a className="navBarList" href="/work">
+            <><a className="navBarList" href="/work"> 
                 Work
               </a>
               <a className="navBarList log_out" href="/logout">

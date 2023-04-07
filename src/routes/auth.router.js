@@ -1,8 +1,6 @@
 const router = require('express').Router();
 const { User } = require('../../db/models');
 const bcrypt = require('bcrypt');
-// const renderComponent = require('../lib/renderComponent');
-// const Error = require('../views/Error');
 const session = require('express-session');
 const FeleStore = require('session-file-store')(session);
 
@@ -52,9 +50,6 @@ router.get('/logout', (req, res) => {
     res.clearCookie('UserAuth');
     res.json({ message: 'logout', loggedout: true });
   });
-
 });
 
 module.exports = router;
-
-//! npm ci - установка зависимостей из package-lock.json

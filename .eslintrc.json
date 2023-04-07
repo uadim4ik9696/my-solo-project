@@ -20,3 +20,4 @@
     "default-param - last": "NONE"
   }
 }
+import/no-extraneous-dependencies

@@ -5,7 +5,13 @@
   "main": "index.js",
   "scripts": {
     "start": "node app. js",
-    "dev": "nodemon app.js --ignore session --ext js,jsx"
+    "dev": "nodemon app.js --ignore session --ext js, jsx, json",
+    "db-create": "npx sequelize db:create",
+    "db-drop": "npx sequelize db:drop",
+    "db-migrate": "npx sequelize db:migrate",
+    "db-undo-migrate": "npx sequelize db:migrate:undo:all",
+    "db-seed": "npx sequelize-cli db:seed:all",
+    "db-undo-seed": "npx sequelize-cli db:seed:undo:all"
   },
   "repository": {
     "type": "git",

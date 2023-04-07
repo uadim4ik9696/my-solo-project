@@ -8,7 +8,8 @@ const TaskList = require('../views/pages/TaskList');
 
 router.get('/', (req, res) => {
   const { user } = req.session;
-  renderComponent(Home, { user }, res);
+  const title = 'Home';
+  renderComponent(Home, { title, user }, res);
 });
 
 router.get('/login', (req, res) => {

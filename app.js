@@ -10,18 +10,18 @@ const session = require('express-session') //? подключаем сессии
 const FeleStore = require('session-file-store')(session) //? подключаем хранилище сессий
 
 
-const { PORT, COOKIE_SEKRET } = process.env; //? получаем порт и секретную строку для сессии из .env файла
 const app = express(); //? создаем экземпляр приложения
 
 app.use(express.urlencoded({ extended: true })); //? подключаем парсер для форм
 app.use(express.json()); //? подключаем парсер для json
 app.use(morgan('dev')); //? подключаем morgan для логирования запросов
-app.use(express.static(path.join(process.cwd(), 'public'))); //? подключаем статику
+app.use(express.static(path.join(process.cwd(), 'public')));
 
 //? подключаем роутеры:
 const index = require('./src/routes/index.router.js');
 const auth = require('./src/routes/auth.router.js');
 
+const { PORT, COOKIE_SEKRET } = process.env; //? получаем порт и секретную строку для сессии из .env файла
 //! конфигурация сессии
 const sessionConfig = {
   name: 'UserAuth',
@@ -38,12 +38,10 @@ const sessionConfig = {
 // подключи сессию как мидлвар
 app.use(session(sessionConfig));
 
-
-dbConect() // подключение к базе данных
+dbConect()
 
 app.use('/', index);
-app.use('/auth', auth); //? подключаем роутер для авторизации
-
+app.use('/auth', auth); //? подключил роутер для авторизации
 
 // app.get('/', (req, res) => {
 //   res.redirect('/home');
