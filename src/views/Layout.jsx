@@ -25,23 +25,25 @@ module.exports = function Layout({ children, user }) {
       </head>
       <body>
         <nav className="navBar">
-          <a id="logo" className="navBarList" href="/">
-            
-          </a>
+          <a id="logo" className="navBarList" href="/"></a>
           {user ? (
-            <><a className="navBarList" href="/work"> 
+            <>
+              <a className="navBarList" href="/work">
                 Work
               </a>
               <a className="navBarList log_out" href="/logout">
                 Log Out
-              </a></>
+              </a>
+            </>
           ) : (
-            <><a className="navBarList" href="/login">
+            <>
+              <a className="navBarList" href="/login">
                 Log In
               </a>
               <a className="navBarList" href="/registration">
                 Registration
-              </a></>
+              </a>
+            </>
           )}
           <a className="navBarList" href="#link">
             <img className="navBarListImg" src="../../img/user.png" alt="" />

@@ -26,14 +26,13 @@ router.post('/reg', async (req, res) => {
 });
 
 router.post('/login', async (req, res) => {
-  //? получаем данные из формы
   const { email, password } = req.body;
 
   const user = await User.findOne({ where: { email } });
   if (!user) {
     return res.sendStatus(401);
   }
-  const passwordIsValid = await bcrypt.compare(password, user.password); //? сравниваем пароли вернет true или false
+  const passwordIsValid = await bcrypt.compare(password, user.password);
   if (!passwordIsValid) {
     return res.sendStatus(401);
   }
