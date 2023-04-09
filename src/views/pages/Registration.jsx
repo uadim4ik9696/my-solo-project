@@ -8,7 +8,7 @@ module.exports = function Registration() {
         <h3>Registration</h3>
         <input
           className="input"
-          required="required"
+          required
           type="text"
           name="name"
           placeholder="name"
@@ -16,18 +16,18 @@ module.exports = function Registration() {
         />
         <input
           className="input"
-          required="required"
+          required
           type="email"
           name="email"
-          placeholder="e-mail"
+          placeholder="E-mail"
           id="username"
         />
         <input
           className="input"
-          required="required"
+          required
           type="password"
           name="password"
-          placeholder="password"
+          placeholder="Password"
           id="password"
         />
 
