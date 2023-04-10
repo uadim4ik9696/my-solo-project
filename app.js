@@ -15,7 +15,7 @@ const app = express(); //? создаем экземпляр приложени�
 app.use(express.urlencoded({ extended: true })); //? подключаем парсер для форм
 app.use(express.json()); //? подключаем парсер для json
 app.use(morgan('dev')); //? подключаем morgan для логирования запросов
-app.use(express.static(path.join(process.cwd(), 'public')));
+app.use(express.static(path.join(process.cwd(), 'public'))); //
 
 //? подключаем роутеры:
 const index = require('./src/routes/index.router.js');

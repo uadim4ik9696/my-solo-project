@@ -31,7 +31,7 @@ module.exports = function Layout({ children, user }) {
               <a className="navBarList" href="/work">
                 Work
               </a>
-              <a className="navBarList log_out" href="/logout">
+              <a className="navBarList logout" href="/auth/logout">
                 Log Out
               </a>
             </>

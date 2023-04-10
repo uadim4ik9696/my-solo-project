@@ -47,7 +47,7 @@ router.get('/logout', (req, res) => {
       return;
     }
     res.clearCookie('UserAuth');
-    res.json({ message: 'logout', loggedout: true });
+    res.redirect('/')
   });
 });
 

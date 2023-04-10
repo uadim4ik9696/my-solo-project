@@ -1,65 +1,83 @@
-const formReg = document.querySelector('.registration-form');
-const formLogin = document.querySelector('.login-form');
-const btnLogOut = document.querySelector('a.navBarList.log_out');
+const forms = {
+  reg: document.querySelector('.registration-form'),
+  login: document.querySelector('.login-form'),
+};
+// const btnLogOut = document.querySelector('.logout');
 
-formReg?.addEventListener('submit', async (e) => {
-  e.preventDefault(); 
-  const response = await fetch(`/auth/reg`, {
+function isValidEmail(email) {
+  return /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/i.test(email);
+}
+
+function displayErrorMessage(message, parentElement) {
+  const errTxt = document.createElement('p');
+  errTxt.innerText = message;
+  errTxt.style.color = 'red';
+  parentElement.appendChild(errTxt);
+  setTimeout(() => {
+    errTxt.remove();
+  }, 4000);
+}
+
+async function submitForm(form, endpoint) {
+  const response = await fetch(endpoint, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      name: e.target.name.value,
-      email: e.target.email.value,
-      password: e.target.password.value,
+      name: form.name?.value,
+      email: form.email.value,
+      password: form.password.value,
     }),
   });
-  if (response.status === 200) {
-    window.location.href = '/login';
-  } else if (response.status === 401) {
-    const errTxt = document.createElement('p');
-    errTxt.innerText = 'Sorry, this email address has already been taken';
-    formReg.appendChild(errTxt);
-    setTimeout(() => {
-      errTxt.remove();
-    }, 4000);
-  }
-});
 
-formLogin?.addEventListener('submit', async (e) => {
+  return response;
+}
+
+forms.reg?.addEventListener('submit', async (e) => {
   e.preventDefault();
-
-  const response = await fetch(`/auth/login`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      email: e.target.email.value,
-      password: e.target.password.value,
-    }),
-  });
-
-  if (response.status === 200) {
-    window.location.href = '/work';
+  if (isValidEmail(e.target.email.value)) {
+    const response = await submitForm(e.target, '/auth/reg');
+    if (response.status === 200) {
+      window.location.href = '/login';
+    } else if (response.status === 401) {
+      displayErrorMessage(
+        'Извините, этот адрес электронной почты уже занят',
+        forms.reg
+      );
+    }
   } else {
-    const errTxt = document.createElement('p');
-    errTxt.innerText = 'Invalid email or password';
-    formLogin.appendChild(errTxt);
-    setTimeout(() => {
-      errTxt.remove();
-    }, 4000);
+    displayErrorMessage(
+      'Введите правильный формат электронной почты.',
+      forms.reg
+    );
   }
 });
 
-// напиши слушатель событий на отправку запроса на удаление сессии
-btnLogOut?.addEventListener('click', async (e) => {
+forms.login?.addEventListener('submit', async (e) => {
   e.preventDefault();
-  const response = await fetch(`/auth/logout`, {
-    method: 'GET',
-  }).then((res) => res.json()); //? получаем ответ от сервера
-  if (response.loggedout) {
-    window.location.href = '/';
+  if (isValidEmail(e.target.email.value)) {
+    const response = await submitForm(e.target, '/auth/login');
+    if (response.status === 200) {
+      window.location.href = '/work';
+    } else {
+      displayErrorMessage(
+        'Неправильный адрес электронной почты или пароль',
+        forms.login
+      );
+    }
+  } else {
+    displayErrorMessage(
+      'Введите правильный формат электронной почты.',
+      forms.login
+    );
   }
-})
+});
+
+// btnLogOut?.addEventListener('click', async (e) => {
+//   e.preventDefault();
+//   const response = await fetch('/auth/logout').then((res) => res.json());
+//   if (response.loggedout) {
+//     window.location.href = '/';
+//   }
+// });
