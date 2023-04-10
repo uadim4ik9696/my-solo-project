@@ -9,17 +9,17 @@ module.exports = function LogIn() {
         <input
           className="input"
           name="email"
-          required="required"
+          required
           type="text"
-          placeholder="e-mail"
+          placeholder="E-mail"
           id="username"
         />
         <input
           className="input"
           name="password"
-          required="required"
+          required
           type="password"
-          placeholder="password"
+          placeholder="Password"
           id="password"
         />
         <button className="login_submit">Submit</button>
