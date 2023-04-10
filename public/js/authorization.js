@@ -73,11 +73,3 @@ forms.login?.addEventListener('submit', async (e) => {
     );
   }
 });
-
-// btnLogOut?.addEventListener('click', async (e) => {
-//   e.preventDefault();
-//   const response = await fetch('/auth/logout').then((res) => res.json());
-//   if (response.loggedout) {
-//     window.location.href = '/';
-//   }
-// });

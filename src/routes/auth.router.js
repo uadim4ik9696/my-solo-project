@@ -1,8 +1,6 @@
 const router = require('express').Router();
-const { User } = require('../../db/models');
 const bcrypt = require('bcrypt');
-const session = require('express-session');
-const FeleStore = require('session-file-store')(session);
+const { User } = require('../../db/models');
 
 router.post('/reg', async (req, res) => {
   try {
@@ -16,7 +14,7 @@ router.post('/reg', async (req, res) => {
       {
         returning: true,
         plain: true,
-      }
+      },
     );
 
     res.sendStatus(200);
@@ -47,7 +45,7 @@ router.get('/logout', (req, res) => {
       return;
     }
     res.clearCookie('UserAuth');
-    res.redirect('/')
+    res.redirect('/');
   });
 });
 
