@@ -11,6 +11,15 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       Task.belongsTo(models.User, { foreignKey: 'userId' });
     }
+
+    static async getAllTasks(id) {
+      const tasks = await this.findAll({
+        where: {
+          userId: id,
+        },
+      });
+      return tasks;
+    }
   }
   Task.init(
     {

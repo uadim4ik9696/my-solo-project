@@ -1,4 +1,5 @@
 const React = require('react');
+const NavBar = require('./pages/NavBar');
 
 module.exports = function Layout({ children, user }) {
   return (
@@ -19,42 +20,20 @@ module.exports = function Layout({ children, user }) {
         <link rel="stylesheet" href="../../css/background.css" />
         <link rel="stylesheet" href="../../css/formReg.css" />
         <link rel="stylesheet" href="../../css/navBar.css" />
+        <link rel="stylesheet" href="../../css/index.css" />
 
         <script defer src="/js/authorization.js" />
         <title>To Do</title>
       </head>
-      <body>
-        <nav className="navBar">
-          <a id="logo" className="navBarList" href="/"></a>
-          {user ? (
-            <>
-              <a className="navBarList" href="/work">
-                Work
-              </a>
-              <a className="navBarList logout" href="/auth/logout">
-                Log Out
-              </a>
-            </>
-          ) : (
-            <>
-              <a className="navBarList" href="/login">
-                Log In
-              </a>
-              <a className="navBarList" href="/registration">
-                Registration
-              </a>
-            </>
-          )}
-          <a className="navBarList" href="#link">
-            <img className="navBarListImg" src="../../img/user.png" alt="" />
-          </a>
-        </nav>
-
+      <body className="body">
         <div className="background">
-          <div className="shape"></div>
-          <div className="shape"></div>
+          <div className="shape" />
+          <div className="shape" />
         </div>
-        {children}
+        <div className="container">
+          <NavBar user={user} />
+          {children}
+        </div>
       </body>
     </html>
   );

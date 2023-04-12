@@ -1,48 +1,44 @@
 const React = require('react');
 const Layout = require('../Layout');
+// const { Task } = require('../../../db/models');
+
+// console.log(Task.getAllTasks());
 
 function checkUsername(username) {
   const regex = /^[a-zA-Zа-яА-Я]+$/;
   if (regex.test(username)) {
     return true;
-  } else {
-    return false;
   }
+  return false;
 }
 
-module.exports = function TaskList({ user }) {
+module.exports = function TaskList({ user, tasks }) {
+  console.log(tasks.length);
   return (
     <Layout user={user}>
-      <link rel="stylesheet" href="../../css/homeTask.css" />
-      <link rel="stylesheet" href="../../css/button.css" />
-      <div className="background">
-        <div className="shape"></div>
-        <div className="shape"></div>
-      </div>
-      <form className="homeForm">
-        <h3>
+      {/* <link rel="stylesheet" href="../../css/homeTask.css" /> */}
+      <script defer src="/js/todo_add.js" />
+
+      <div className="frosted-glass homeForm">
+        <h4>
           {checkUsername(user.name)
-            ? `Hi, ${user.name} 👋 ! Do it here`
-            : `Hi 👋 ! Do it here`}
-        </h3>
-        <div className="button_task">📝</div>
-        <div className="input taska">
-          <input className="galochka" type="checkbox" />
-          Доделать функционал тудушечки своей
+            ? `Привет, ${user.name} 👋 !`
+            : 'Привет 👋 !'}
+        </h4>
+        <form name="newTask" className="add_task">
+          <input name="title" type="text" className="input_task input" placeholder="Запиши что бы не забыть" required />
+          <button className="btn_add_task">+</button>
+          {/* <div className="button_task">📝</div> */}
+        </form>
+        <div className="list">
+          {tasks.map((task) => (
+            <div className="input taska">
+              <input className="galochka" type="checkbox" />
+              {task.title}
+            </div>
+          ))}
         </div>
-        <div className="input taska">
-          <input className="galochka" type="checkbox" />
-          Провести тестирование кода и выявить и исправить ошибки.
-        </div>
-        <div className="input taska">
-          <input className="galochka" type="checkbox" />
-          Рефакторинг кода
-        </div>
-        <div className="input taska">
-          <input className="galochka" type="checkbox" />
-          Порадовать себя чашечкой кофе
-        </div>
-      </form>
+      </div>
     </Layout>
   );
 };

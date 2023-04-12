@@ -6,6 +6,8 @@ const Login = require('../views/pages/Login');
 const Registration = require('../views/pages/Registration');
 const TaskList = require('../views/pages/TaskList');
 
+const { Task } = require('../../db/models');
+
 router.get('/', (req, res) => {
   const { user } = req.session;
   const title = 'Home';
@@ -20,9 +22,11 @@ router.get('/registration', (req, res) => {
   renderComponent(Registration, {}, res);
 });
 
-router.get('/work', (req, res) => {
+router.get('/work', async (req, res) => {
   const { user } = req.session;
-  renderComponent(TaskList, { user }, res);
+  const tasks = await Task.getAllTasks(user.id);
+  console.log(tasks);
+  renderComponent(TaskList, { user, tasks }, res);
 });
 
 module.exports = router;

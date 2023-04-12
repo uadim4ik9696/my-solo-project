@@ -2,7 +2,6 @@ const forms = {
   reg: document.querySelector('.registration-form'),
   login: document.querySelector('.login-form'),
 };
-// const btnLogOut = document.querySelector('.logout');
 
 function isValidEmail(email) {
   return /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/i.test(email);
@@ -42,14 +41,14 @@ forms.reg?.addEventListener('submit', async (e) => {
       window.location.href = '/login';
     } else if (response.status === 401) {
       displayErrorMessage(
-        'Извините, этот адрес электронной почты уже занят',
-        forms.reg
+        'Адрес электронной почты уже занят',
+        forms.reg,
       );
     }
   } else {
     displayErrorMessage(
-      'Введите правильный формат электронной почты.',
-      forms.reg
+      'Не верный формат электронной почты.',
+      forms.reg,
     );
   }
 });
@@ -63,13 +62,13 @@ forms.login?.addEventListener('submit', async (e) => {
     } else {
       displayErrorMessage(
         'Неправильный адрес электронной почты или пароль',
-        forms.login
+        forms.login,
       );
     }
   } else {
     displayErrorMessage(
       'Введите правильный формат электронной почты.',
-      forms.login
+      forms.login,
     );
   }
 });

@@ -6,8 +6,8 @@ module.exports = function Home({ user }) {
     <Layout user={user}>
       <link rel="stylesheet" href="../../css/homeTask.css" />
       <div className="background">
-        <div className="shape"></div>
-        <div className="shape"></div>
+        {/* <div className="shape"></div>
+        <div className="shape"></div> */}
       </div>
       <form className="homeForm">
         <h3>TO DO</h3>

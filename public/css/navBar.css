@@ -8,28 +8,25 @@
   background: linear-gradient(90deg, #f2881f, #b5147a);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  /* color: #ff512f; */
   display: table;
-  /* margin: 20px auto; */
 }
+
 #logo:hover {
   text-shadow: 1px 1px 50px  #f2881f;
 }
-
 .navBar {
   margin-top: 50px;
   height: 60px;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: 800px;
+  width: 100%;
   background-color: rgba(255, 255, 255, 0.13);
   border-radius: 10px;
   backdrop-filter: blur(10px);
   border: 2px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 0 40px rgba(26, 23, 53, 0.6);
 }
-
 .navBarList {
   height: 40px;
   width: 130px;
@@ -54,4 +51,9 @@
 .navBarListImg {
   height: 30px;
   position: absolute;
+}
+@media (max-width: 830px) {
+  .container {
+    width: 600px;
+  }
 }

@@ -4,7 +4,7 @@ const Layout = require('../Layout');
 module.exports = function LogIn() {
   return (
     <Layout>
-      <form className="login-form">
+      <form className="frosted-glass login-form">
         <h3>Log In</h3>
         <input
           className="input"
@@ -22,7 +22,7 @@ module.exports = function LogIn() {
           placeholder="Password"
           id="password"
         />
-        <button className="login_submit">Submit</button>
+        <button className="btn login_submit">Submit</button>
       </form>
     </Layout>
   );
