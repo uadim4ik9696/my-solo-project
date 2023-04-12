@@ -1,3 +1,10 @@
+*,
+*:before,
+*:after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
 .body {
   width: 100%;
   display: flex;
@@ -70,8 +77,6 @@
  align-items: center;
 }
 .input_task {
-  /* width: 80%; */
-  /* display: none; */
   width: 400px;
   margin: 0;
 }
@@ -93,4 +98,9 @@
 }
 .btn_add_task:active {
   color: #b46300;
+}
+@media (max-width: 830px) {
+  .container {
+    width: 600px;
+  }
 }
