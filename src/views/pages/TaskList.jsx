@@ -5,31 +5,29 @@ const Layout = require('../Layout');
 // console.log(Task.getAllTasks());
 
 function checkUsername(username) {
+  console.log(username);
   const regex = /^[a-zA-Zа-яА-Я]+$/;
   if (regex.test(username)) {
-    return true;
+    return `Привет, ${username} 👋 !`;
   }
-  return false;
+  return 'Привет, 👋 ! Интересное у тебя имя 🤭';
 }
 
 module.exports = function TaskList({ user, tasks }) {
-  console.log(tasks.length);
   return (
     <Layout user={user}>
       {/* <link rel="stylesheet" href="../../css/homeTask.css" /> */}
       <script defer src="/js/todo_add.js" />
 
       <div className="frosted-glass homeForm">
-        <h4>
-          {checkUsername(user.name)
-            ? `Привет, ${user.name} 👋 !`
-            : 'Привет 👋 !'}
-        </h4>
         <form name="newTask" className="add_task">
-          <input name="title" type="text" className="input_task input" placeholder="Запиши что бы не забыть" required />
+          <input name="title" type="text" className="input_task input" placeholder="Запиши то что не хочешь забыть" required />
           <button className="btn_add_task">+</button>
           {/* <div className="button_task">📝</div> */}
         </form>
+        <div className="greetings">
+          {checkUsername(user.name)}
+        </div>
         <div className="list">
           {tasks.map((task) => (
             <div className="taska input">

@@ -11,7 +11,7 @@ module.exports = function Registration() {
           required
           type="text"
           name="name"
-          placeholder="name"
+          placeholder="Name"
           id="username"
         />
         <input
