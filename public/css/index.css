@@ -34,6 +34,9 @@
   border-radius: 3px;
   outline: none;
 }
+::placeholder {
+  color: #e5e5e5;
+}
 .homeForm {
   width: 100%;
   min-height: 200px;
@@ -75,31 +78,28 @@
 }
 .button_task {
   position: absolute;
-  right: 25px;
-  top: 20px;
+  right: 20px;
+  top: 10px;
   font-size: 50px;
-  font-weight: 300;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 .button_task:hover {
   cursor: pointer;
   font-size: 51px;
 }
 .button_task:active {
-  font-size: 46px;
+  font-size: 50px;
 }
 .add_task {
   position: absolute;
-  right: 40px;
+  right: 90px;
   top: 10px;
   display: flex;
   align-items: center;
+  display: none;
 }
 .input_task {
   width: 400px;
-  margin: 0;
+  margin-top: 5px;
   padding-right: 45px;
 }
 .btn_add_task {

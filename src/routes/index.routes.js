@@ -25,7 +25,6 @@ router.get('/registration', (req, res) => {
 router.get('/work', async (req, res) => {
   const { user } = req.session;
   const tasks = await Task.getAllTasks(user?.id);
-  console.log(tasks);
   renderComponent(TaskList, { user, tasks }, res);
 });
 

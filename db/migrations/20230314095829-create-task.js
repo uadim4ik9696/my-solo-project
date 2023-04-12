@@ -24,7 +24,8 @@ module.exports = {
         type: Sequelize.STRING,
       },
       status: {
-        type: Sequelize.STRING,
+        allowNull: false,
+        type: Sequelize.BOOLEAN,
       },
       completionAt: {
         type: Sequelize.DATE,

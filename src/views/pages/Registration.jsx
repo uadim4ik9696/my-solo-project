@@ -4,6 +4,7 @@ const Layout = require('../Layout');
 module.exports = function Registration() {
   return (
     <Layout>
+      <link defer rel="stylesheet" href="/css/authForm.css" />
       <form className="frosted-glass registration-form auth">
         <h3>Registration</h3>
         <input

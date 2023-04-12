@@ -4,11 +4,6 @@ const Layout = require('../Layout');
 module.exports = function Home({ user }) {
   return (
     <Layout user={user}>
-      <link rel="stylesheet" href="../../css/homeTask.css" />
-      <div className="background">
-        {/* <div className="shape"></div>
-        <div className="shape"></div> */}
-      </div>
       <form className="homeForm">
         <h3>TO DO</h3>
         <h4>Планируйте свою жизнь с легкостью</h4>

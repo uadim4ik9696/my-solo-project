@@ -28,9 +28,6 @@ align-items: center;
   margin-top: 40px;
   width: 300px;
 }
-::placeholder {
-  color: #e5e5e5;
-}
 .auth-btn {
   margin: 40px;
   width: 100%;

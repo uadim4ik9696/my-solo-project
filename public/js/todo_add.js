@@ -1,6 +1,12 @@
-// // const list = document.querySelector('.list');
+// const list = document.querySelector('.list');
 const { newTask } = document.forms;
-const button = document.querySelector('.btn_add_task');
+document.querySelector('.button_task').addEventListener('click', () => {
+  if (newTask.style.display === 'block') {
+    newTask.style.display = 'none';
+  } else {
+    newTask.style.display = 'block';
+  }
+});
 
 newTask.addEventListener('submit', (e) => {
   e.preventDefault();
@@ -14,6 +20,6 @@ newTask.addEventListener('submit', (e) => {
     body: JSON.stringify({ task }),
   });
 
-  const data = response.json();
-  console.log(data);
+  // const data = response.json();
+  // console.log('=-=-=-=-=-=--=-=-=-=-=-=--=-=-', data);
 });

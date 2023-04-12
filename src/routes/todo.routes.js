@@ -5,12 +5,12 @@ const { Task } = require('../../db/models');
 router.post('/', async (req, res) => {
   const { user } = req.session;
   const { task } = req.body;
-  console.log(task);
   try {
     await Task.create(
       {
         title: task,
         userId: user.id,
+        status: false,
       },
       {
         returning: true,
@@ -19,6 +19,7 @@ router.post('/', async (req, res) => {
     );
     res.sendStatus(200);
   } catch (error) {
+    console.log(error);
     res.sendStatus(401);
   }
 });
