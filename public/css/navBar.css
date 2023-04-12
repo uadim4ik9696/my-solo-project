@@ -5,13 +5,10 @@
   background: linear-gradient(90deg, #f2881f, #b5147a);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  display: table;
 }
-
 #logo:hover {
   text-shadow: 1px 1px 50px #f2881f;
 }
-
 .navBar {
   display: flex;
   justify-content: space-around;
@@ -25,7 +22,6 @@
   border-radius: 10px;
   box-shadow: 0 0 40px rgba(26, 23, 53, 0.6);
 }
-
 .navBarList {
   display: flex;
   justify-content: center;
@@ -38,17 +34,13 @@
   background-color: rgba(255, 255, 255, 0.07);
   border-radius: 5px;
 }
-
 .navBarList:last-child {
   background: none;
   width: max-content;
 }
-
 .navBarList:hover {
   text-shadow: 1px 1px 10px #f2881f;
 }
-
 .navBarListImg {
   height: 30px;
-  position: absolute;
 }

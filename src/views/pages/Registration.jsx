@@ -4,10 +4,10 @@ const Layout = require('../Layout');
 module.exports = function Registration() {
   return (
     <Layout>
-      <form className="frosted-glass registration-form">
+      <form className="frosted-glass registration-form auth">
         <h3>Registration</h3>
         <input
-          className="input"
+          className="input auth_input"
           required
           type="text"
           name="name"
@@ -15,7 +15,7 @@ module.exports = function Registration() {
           id="username"
         />
         <input
-          className="input"
+          className="input auth_input"
           required
           type="email"
           name="email"
@@ -23,14 +23,14 @@ module.exports = function Registration() {
           id="username"
         />
         <input
-          className="input"
+          className="input auth_input"
           required
           type="password"
           name="password"
           placeholder="Password"
           id="password"
         />
-        <button className="btn registration_submit">Submit</button>
+        <button className="auth-btn registration_submit">Submit</button>
       </form>
     </Layout>
   );

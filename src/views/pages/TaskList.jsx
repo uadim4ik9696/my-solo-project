@@ -32,8 +32,8 @@ module.exports = function TaskList({ user, tasks }) {
         </form>
         <div className="list">
           {tasks.map((task) => (
-            <div className="input taska">
-              <input className="galochka" type="checkbox" />
+            <div className="taska input">
+              <input className="checkbox" type="checkbox" />
               {task.title}
             </div>
           ))}

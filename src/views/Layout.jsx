@@ -18,9 +18,9 @@ module.exports = function Layout({ children, user }) {
           rel="stylesheet"
         />
         <link rel="stylesheet" href="../../css/background.css" />
-        <link rel="stylesheet" href="../../css/formReg.css" />
-        <link rel="stylesheet" href="../../css/navBar.css" />
         <link rel="stylesheet" href="../../css/index.css" />
+        <link rel="stylesheet" href="../../css/authForm.css" />
+        <link rel="stylesheet" href="../../css/navBar.css" />
 
         <script defer src="/js/authorization.js" />
         <title>To Do</title>

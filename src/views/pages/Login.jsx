@@ -4,10 +4,10 @@ const Layout = require('../Layout');
 module.exports = function LogIn() {
   return (
     <Layout>
-      <form className="frosted-glass login-form">
+      <form className="frosted-glass login-form auth">
         <h3>Log In</h3>
         <input
-          className="input"
+          className="input auth_input"
           name="email"
           required
           type="text"
@@ -15,14 +15,14 @@ module.exports = function LogIn() {
           id="username"
         />
         <input
-          className="input"
+          className="input auth_input"
           name="password"
           required
           type="password"
           placeholder="Password"
           id="password"
         />
-        <button className="btn login_submit">Submit</button>
+        <button className="auth-btn login_submit">Submit</button>
       </form>
     </Layout>
   );
