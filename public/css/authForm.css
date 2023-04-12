@@ -26,7 +26,6 @@ align-items: center;
 .auth_input {
   display: block;
   margin-top: 40px;
-  padding: 0 10px;
   width: 300px;
 }
 ::placeholder {
