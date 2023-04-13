@@ -68,11 +68,6 @@
   width: 30px;
   height: 30px;
   margin: 10px;
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.13);
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 .checkbox:disabled {
   background-color: rgba(255, 255, 255, 0.13);
@@ -80,15 +75,16 @@
 .button_task {
   position: absolute;
   right: 20px;
-  top: 10px;
-  font-size: 50px;
+  top: -15px;
+  font-size: 80px;
+  color: #f2901c;
 }
 .button_task:hover {
   cursor: pointer;
-  font-size: 51px;
+  font-size: 81px;
 }
 .button_task:active {
-  font-size: 50px;
+  font-size: 79px;
 }
 .add_task {
   position: absolute;
@@ -105,12 +101,13 @@
 }
 .btn_add_task {
   position: absolute;
-  font-size: 60px;
+  font-size: 70px;
   color: #f2901c;
   background: none;
+  height: min-content;
   border: none;
+  top: -5px;
   right: 5px;
-  /* margin-left: 30px; */
 }
 .btn_add_task:hover {
 color: #ff8c00;
@@ -119,63 +116,50 @@ color: #ff8c00;
 color: #b46300;
 }
 
-.task-delete {
-  /* position: absolute; */
-  right: 20px;
-  top: 10px;
-  display: flex;
-}
 .left {
   display: flex;
   align-items: center;
 }
-.right {
-  display: flex;
-  align-items: center;
-  position: relative;
-}
+
 .formEdit {
   position: absolute;
   left: 65px;
   top: 53px;
 }
-.input-edit {
-  display: none;
-  height: 30px;
+.spanEdit {
+  background: none;
+  text-decoration: none;
+  color: #ffffff;
+  width: 100%;
+  height: 60px;
   letter-spacing: 0.5px;
-  padding: 0 10px;
-  outline: none;
-  border-radius: 3px;
-  padding-right: 45px;
-  font-family: 'Poppins', sans-serif;
   font-size: 20px;
   font-weight: 300;
-  color: #000000;
+  outline: none;
   border: none;
-  width: 717px;
-  height: 60px;
-  background-color: rgb(255, 209, 145);
-  padding-right: 45px;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
 }
-.task-edit, .task-save {
+.btnTasks {
+  display: flex;
+  flex-direction: column;
+}
+.task-delete, .task-edit {
+  background-color: #f1901c;
+  color: #ffffff;
   width: 100px;
+  border-radius: 3px;
+  border: none;
+  margin: 2px;
 }
-.task-delete, .task-edit, .task-save {
-  position: absolute;
-  z-index: 2;
+.task-edit:hover, .task-delete:hover {
+  border: 1px solid #493416;
 }
-.task-delete {
-  right: 0px;
-  top: -13px;
+.task-edit:active, .task-delete:active {
+  border: 2px solid #493416;
 }
-.task-edit {
-  right: 72px;
-  top: -13px;
-}
-.task-save {
-  right: 120px;
-  top: 0px;
-}
+
 @media (max-width: 830px) {
 .container {
 width: 600px;

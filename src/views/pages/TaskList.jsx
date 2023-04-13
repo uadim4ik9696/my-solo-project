@@ -15,7 +15,7 @@ module.exports = function TaskList({ user, tasks }) {
     <Layout user={user}>
 
       <div className="frosted-glass homeForm">
-        <div className="button_task">📝</div>
+        <div className="button_task">&#60;</div>
         <form name="newTask" className="add_task">
           <input name="title" type="text" className="input_task input" placeholder="Запиши то что не хочешь забыть" required />
           <button className="btn_add_task">+</button>
@@ -32,7 +32,6 @@ module.exports = function TaskList({ user, tasks }) {
                     id={task.id}
                     className="checkbox"
                     checked
-                    onChange={() => {}}
                     type="checkbox"
                   />
                 ) : (
@@ -42,21 +41,14 @@ module.exports = function TaskList({ user, tasks }) {
                     type="checkbox"
                   />
                 )}
-                {task.title}
               </div>
-              <div className="right">
+              <span name="title" className="spanEdit">
+                {task.title}
+              </span>
+              <div className="btnTasks">
                 <button className="task-edit" id={task.id}>Изменить</button>
                 <button className="task-delete" id={task.id}>Удалить</button>
               </div>
-              {/* <form className="formEdit"> */}
-              <input
-                name="title"
-                className="input-edit"
-                defaultValue={task.title}
-                type="text"
-              />
-              <button className="task-save" id={task.id}>Сохранить</button>
-              {/* </form> */}
             </div>
           ))}
         </div>

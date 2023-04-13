@@ -15,7 +15,7 @@ const app = express(); // ? создаем экземпляр приложени
 const { PORT = 3111, COOKIE_SEKRET = 'secretik' } = process.env;
 app.use(express.urlencoded({ extended: true })); // ? подключаем парсер для форм
 app.use(express.json()); // ? подключаем парсер для json
-app.use(morgan('dev'))
+app.use(morgan('dev'));
 app.use(ssr);
 app.use(express.static(path.join(process.cwd(), 'public')));
 app.use(session({
@@ -38,6 +38,9 @@ app.use('/', indexRouter);
 app.use('/auth', authRouter);
 app.use('/todo', todoRouter);
 
+app.get('*', (req, res) => {
+  res.redirect('/');
+});
 dbConect();
 app.listen(PORT, () => {
   console.log(`Сервер запущен на порту: ${PORT}`);
