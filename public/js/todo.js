@@ -38,7 +38,6 @@ newTask?.addEventListener('submit', async (e) => {
           ${task}
           </span>
           <div class="btnTasks">
-          <button class="task-edit" id=${data.id}>Изменить</button>
           <button class="task-delete" id=${data.id}>Удалить</button>
           </div>
       `; // <input class="input-edit" type="text" defaultValue=${task} />
@@ -85,7 +84,7 @@ list?.addEventListener('click', async (e) => {
   // todo: =-=-=-=-=реализовать редактирование задачи=-=-=-=-=
   // Обработчик клика по кнопке редактирования задачи
   if (e.target.tagName === 'SPAN') {
-    const spanEdit = e.target.querySelector('.spanEdit');
+    const spanEdit = e.target;
     console.log(spanEdit);
 
     const inputEdit = document.createElement('input');

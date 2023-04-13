@@ -54,8 +54,6 @@ router.put('/:id', async (req, res) => {
   try {
     const task = await Task.findByPk(req.params.id);
     await task.update({ title: req.body.task });
-    console.log(`fffffffffffffff${req.body.task}fffffffffffffffff`);
-
     res.status(200).json({ message: 'Задача изменена!' });
   } catch (error) {
     console.log(error);

@@ -11,26 +11,13 @@ function checkUsername(username) {
 }
 
 module.exports = function TaskList({ user, tasks }) {
-  // const handleCheckboxChange = (taskId, isChecked) => {
-  //   const updatedTasks = tasks.map((task) => {
-  //     if (task.id === taskId) {
-  //       return {
-  //         ...task,
-  //         status: isChecked,
-  //       };
-  //     }
-  //     return task;
-  //   });
-  //   setTasks(updatedTasks);
-  // };
-
   return (
     <Layout user={user}>
 
       <div className="frosted-glass homeForm">
         <div className="button_task">&#60;</div>
         <form name="newTask" className="add_task">
-          <input name="title" type="text" className="input_task input" placeholder="Запиши то что не хочешь забыть" required />
+          <input name="title" type="text" className="input_task input" placeholder="Запиши то, что не хочешь забыть" required />
           <button className="btn_add_task">+</button>
         </form>
         <div className="greetings">
@@ -52,11 +39,11 @@ module.exports = function TaskList({ user, tasks }) {
                 />
 
               </div>
-              <span name="title" className="spanEdit">
+              <span id={task.id} name="title" className="spanEdit">
                 {task.title}
               </span>
               <div className="btnTasks">
-                <button className="task-edit" id={task.id}>Изменить</button>
+                {/* <button className="task-edit" id={task.id}>Изменить</button> */}
                 <button className="task-delete" id={task.id}>Удалить</button>
               </div>
             </div>
