@@ -81,7 +81,6 @@ list?.addEventListener('click', async (e) => {
       } else { alert(data.message); }
     } catch (error) { console.error(error); }
   }
-  // todo: =-=-=-=-=реализовать редактирование задачи=-=-=-=-=
   // Обработчик клика по кнопке редактирования задачи
   if (e.target.tagName === 'SPAN') {
     const spanEdit = e.target;

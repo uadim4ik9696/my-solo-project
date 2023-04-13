@@ -24,7 +24,7 @@ module.exports = function NavBar({ user }) {
           </a>
         </>
       )}
-      <a className="navBarList" href="#link">
+      <a className="navBarList" href="/user">
         <img className="navBarListImg" src="/img/user.png" alt="" />
       </a>
     </nav>
