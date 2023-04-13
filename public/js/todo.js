@@ -1,5 +1,6 @@
 const { newTask } = document.forms;
 const buttonTask = document.querySelector('.button_task');
+
 buttonTask?.addEventListener('click', (e) => {
   if (newTask.style.display === 'none') {
     newTask.style.display = 'block';
@@ -81,41 +82,29 @@ list?.addEventListener('click', async (e) => {
       } else { alert(data.message); }
     } catch (error) { console.error(error); }
   }
-  // todo: =-=-=-=-==реализовать редактирование задачи==-=-=-=-=
+  // todo: =-=-=-=-=реализовать редактирование задачи=-=-=-=-=
   // Обработчик клика по кнопке редактирования задачи
-  if (e.target.innerHTML.toLowerCase() === 'изменить') {
+  if (e.target.tagName === 'SPAN') {
+    console.log(e.target);
     const spanEdit = e.target.parentNode.parentNode.querySelector('.spanEdit');
     const inputEdit = document.createElement('input');
     inputEdit.type = 'text';
     inputEdit.value = spanEdit.innerHTML;
-    inputEdit.className = 'spanEdit';
+    inputEdit.className = 'spanEdit inputEdit';
     inputEdit.addEventListener('blur', () => {
-      spanEdit.innerHTML = inputEdit.value;
+      const updatedTask = inputEdit.value;
+      spanEdit.innerHTML = updatedTask;
       inputEdit.parentNode.replaceChild(spanEdit, inputEdit);
+      const taskId = e.target.id;
+      fetch(`/todo/${taskId}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ task: updatedTask }),
+      });
     });
     spanEdit.parentNode.replaceChild(inputEdit, spanEdit);
     inputEdit.focus();
   }
-  // Обработчик клика по кнопке сохранить
-  const saveButton = document.querySelector('.task-edit');
-  // ?.addEventListener('submit', async (event) => {
-  //   event.preventDefault();
-  //   // const task = e.target.title.value;
-  //   if (event.target.innerHTML.toLowerCase() === 'сохранить') {
-  //     console.log(event.target.parentNode.querySelector('.input-edit').value);
-  //     // const response = await fetch(`/todo/${e.target.id}`, {
-  //     //   method: 'PUT',
-  //     //   headers: {
-  //     //     'Content-Type': 'application/json',
-  //     //   },
-  //     //   body: JSON.stringify({ title: event.target.parentNode.parentNode.querySelector('.input-edit').value }),
-  //     // });
-  //     // const data = await response.json();
-  //     // if (response.ok) {
-  //     //   e.target.parentNode.parentNode.remove();
-  //     // } else {
-  //     //   alert(data.message);
-  //     // }
-  //   }
-  // });
 });

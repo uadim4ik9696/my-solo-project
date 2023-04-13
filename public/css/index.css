@@ -115,18 +115,15 @@ color: #ff8c00;
 .btn_add_task:active {
 color: #b46300;
 }
-
 .left {
   display: flex;
   align-items: center;
 }
-
 .formEdit {
   position: absolute;
   left: 65px;
   top: 53px;
 }
-
 .spanEdit {
   background: none;
   text-decoration: none;
@@ -138,9 +135,14 @@ color: #b46300;
   font-weight: 300;
   outline: none;
   border: none;
-  border-radius: 3px;
   display: flex;
   align-items: center;
+  margin-right: 5px;
+  padding-left: 15px;
+}
+.inputEdit {
+  border-radius: 5px;
+  box-shadow: #000000 0px 0px 10px -3px;
 }
 .btnTasks {
   display: flex;
@@ -160,7 +162,6 @@ color: #b46300;
 .task-edit:active, .task-delete:active {
   border: 2px solid #493416;
 }
-
 @media (max-width: 830px) {
 .container {
 width: 600px;

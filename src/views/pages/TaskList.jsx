@@ -11,6 +11,19 @@ function checkUsername(username) {
 }
 
 module.exports = function TaskList({ user, tasks }) {
+  // const handleCheckboxChange = (taskId, isChecked) => {
+  //   const updatedTasks = tasks.map((task) => {
+  //     if (task.id === taskId) {
+  //       return {
+  //         ...task,
+  //         status: isChecked,
+  //       };
+  //     }
+  //     return task;
+  //   });
+  //   setTasks(updatedTasks);
+  // };
+
   return (
     <Layout user={user}>
 
@@ -27,20 +40,17 @@ module.exports = function TaskList({ user, tasks }) {
           {tasks.map((task) => (
             <div key={task.id} className="taska input">
               <div className="left">
-                {task.status ? (
-                  <input
-                    id={task.id}
-                    className="checkbox"
-                    checked
-                    type="checkbox"
-                  />
-                ) : (
-                  <input
-                    id={task.id}
-                    className="checkbox"
-                    type="checkbox"
-                  />
-                )}
+
+                <input
+                  id={task.id}
+                  className="checkbox"
+                  checked={task.status}
+                  type="checkbox"
+                  onChange={(e) => setTasks(
+                    tasks.map((t) => (t.id === task.id ? { ...t, status: e.target.checked } : t)),
+                  )}
+                />
+
               </div>
               <span name="title" className="spanEdit">
                 {task.title}
