@@ -19,10 +19,9 @@ module.exports = function Layout({ children, user }) {
         />
         <link href="/css/background.css" rel="stylesheet" />
         <link href="/css/index.css" rel="stylesheet" />
-        <link href="/css/navBar.css" rel="stylesheet" />
 
         <script defer src="/js/authorization.js" />
-        <script defer src="/js/todo_add.js" />
+        <script defer src="/js/todo.js" />
         <title>To Do</title>
       </head>
       <body className="body">

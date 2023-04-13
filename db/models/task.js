@@ -17,6 +17,7 @@ module.exports = (sequelize, DataTypes) => {
         where: {
           userId: id,
         },
+        order: [['id', 'DESC']], // сортировка по возрастанию id
       });
       return tasks;
     }

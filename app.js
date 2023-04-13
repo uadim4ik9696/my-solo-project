@@ -8,13 +8,15 @@ const path = require('path'); // ? подключаем path для работы
 const session = require('express-session');
 const FeleStore = require('session-file-store')(session);
 const dbConect = require('./db/config/dbConect');
+const ssr = require('./src/middlewares/ssr');
 
 const app = express(); // ? создаем экземпляр приложения
 
 const { PORT = 3111, COOKIE_SEKRET = 'secretik' } = process.env;
 app.use(express.urlencoded({ extended: true })); // ? подключаем парсер для форм
 app.use(express.json()); // ? подключаем парсер для json
-app.use(morgan('dev')); // ? подключаем morgan для логирования запросов
+app.use(morgan('dev'))
+app.use(ssr);
 app.use(express.static(path.join(process.cwd(), 'public')));
 app.use(session({
   name: 'UserAuth',

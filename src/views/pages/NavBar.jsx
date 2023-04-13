@@ -2,7 +2,8 @@ const React = require('react');
 
 module.exports = function NavBar({ user }) {
   return (
-    <nav className="navBar">
+    <nav className="navBar" style={{ height: '70px;' }}>
+      <link href="/css/navBar.css" rel="stylesheet" />
       <a id="logo" className="navBarList" href="/"> TODO</a>
       {user ? (
         <>

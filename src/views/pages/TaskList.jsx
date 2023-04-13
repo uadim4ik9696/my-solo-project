@@ -15,7 +15,7 @@ module.exports = function TaskList({ user, tasks }) {
     <Layout user={user}>
 
       <div className="frosted-glass homeForm">
-        <div className="button_task">📝</div>
+        {/* <div className="button_task">📝</div> */}
         <form name="newTask" className="add_task">
           <input name="title" type="text" className="input_task input" placeholder="Запиши то что не хочешь забыть" required />
           <button className="btn_add_task">+</button>
@@ -26,23 +26,25 @@ module.exports = function TaskList({ user, tasks }) {
         <div className="list">
           {tasks.map((task) => (
             <div key={task.id} className="taska input">
-              {task.status ? (
-                <input
-                  id={task.id}
-                  className="checkbox"
-                  checked
-                  onChange={() => {}}
-                  type="checkbox"
-                />
-              ) : (
-                <input
-                  id={task.id}
-                  className="checkbox"
-                  type="checkbox"
-                />
-              )}
-
-              {task.title}
+              <div className="left">
+                {task.status ? (
+                  <input
+                    id={task.id}
+                    className="checkbox"
+                    checked
+                    onChange={() => {}}
+                    type="checkbox"
+                  />
+                ) : (
+                  <input
+                    id={task.id}
+                    className="checkbox"
+                    type="checkbox"
+                  />
+                )}
+                {task.title}
+              </div>
+              <button className="task-delete" id={task.id}>Удалить</button>
             </div>
           ))}
         </div>

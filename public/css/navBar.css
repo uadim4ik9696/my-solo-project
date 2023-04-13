@@ -9,6 +9,19 @@
 #logo:hover {
   text-shadow: 1px 1px 50px #f2881f;
 }
+.navBarList {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 130px;
+  font: 300 20px/1 sans-serif;
+  color: white;
+  text-decoration: none;
+  background-color: rgba(255, 255, 255, 0.07);
+  border-radius: 5px;
+  padding: 10px 0;
+}
 .navBar {
   display: flex;
   justify-content: space-around;
@@ -21,18 +34,6 @@
   border: 2px solid rgba(255, 255, 255, 0.1);
   border-radius: 10px;
   box-shadow: 0 0 40px rgba(26, 23, 53, 0.6);
-}
-.navBarList {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 40px;
-  width: 130px;
-  font: 300 20px/1 sans-serif;
-  color: white;
-  text-decoration: none;
-  background-color: rgba(255, 255, 255, 0.07);
-  border-radius: 5px;
 }
 .navBarList:last-child {
   background: none;
