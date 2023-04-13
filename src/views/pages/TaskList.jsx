@@ -15,7 +15,7 @@ module.exports = function TaskList({ user, tasks }) {
     <Layout user={user}>
 
       <div className="frosted-glass homeForm">
-        {/* <div className="button_task">📝</div> */}
+        <div className="button_task">📝</div>
         <form name="newTask" className="add_task">
           <input name="title" type="text" className="input_task input" placeholder="Запиши то что не хочешь забыть" required />
           <button className="btn_add_task">+</button>
@@ -44,7 +44,19 @@ module.exports = function TaskList({ user, tasks }) {
                 )}
                 {task.title}
               </div>
-              <button className="task-delete" id={task.id}>Удалить</button>
+              <div className="right">
+                <button className="task-edit" id={task.id}>Изменить</button>
+                <button className="task-delete" id={task.id}>Удалить</button>
+              </div>
+              {/* <form className="formEdit"> */}
+              <input
+                name="title"
+                className="input-edit"
+                defaultValue={task.title}
+                type="text"
+              />
+              <button className="task-save" id={task.id}>Сохранить</button>
+              {/* </form> */}
             </div>
           ))}
         </div>

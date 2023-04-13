@@ -2,8 +2,7 @@ const router = require('express').Router();
 const Sequelize = require('sequelize');
 const { Task } = require('../../db/models');
 
-const handleError = (res, message) => {
-  console.log(message);
+const handleError = (res) => {
   res.status(401).json({ message: 'Что-то пошло не так! Повторите попытку!' });
 };
 
@@ -21,7 +20,8 @@ router.post('/', async (req, res) => {
     });
     res.status(200).json(newTask);
   } catch (error) {
-    handleError(res, error);
+    console.log(error);
+    handleError(res);
   }
 });
 
@@ -30,21 +30,38 @@ router.delete('/:id', async (req, res) => {
   try {
     const task = await Task.findByPk(id);
     await task.destroy();
-    res.sendStatus(200);
+    res.status(200).json({ message: 'Задача удалена!' });
   } catch (error) {
-    handleError(res, error);
+    console.log(error);
+    handleError(res);
+  }
+});
+
+router.put('/status/:id', async (req, res) => {
+  try {
+    const respoon = await Task.update(
+      { status: Sequelize.literal('NOT status') },
+      { where: { id: req.params.id } },
+    );
+    res.status(200).json({ respoon });
+  } catch (error) {
+    console.log(error);
+    handleError(res);
   }
 });
 
 router.put('/:id', async (req, res) => {
   try {
-    await Task.update(
-      { status: Sequelize.literal('NOT status') },
-      { where: { id: req.params.id } },
-    );
-    res.sendStatus(200);
+    const task = await Task.findByPk(req.params.id);
+    await task.update({ title: req.body.title });
+    // const respoon = await Task.update(
+    //   { status: Sequelize.literal('NOT status') },
+    //   { where: { id: req.params.id } },
+    // );
+    res.status(200).json({ message: 'Задача изменена!' });
   } catch (error) {
-    handleError(res, error);
+    console.log(error);
+    handleError(res);
   }
 });
 

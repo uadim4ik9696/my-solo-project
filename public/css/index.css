@@ -96,7 +96,7 @@
   top: 10px;
   display: flex;
   align-items: center;
-  /* display: none; */
+  display: none;
 }
 .input_task {
   width: 400px;
@@ -128,6 +128,53 @@ color: #b46300;
 .left {
   display: flex;
   align-items: center;
+}
+.right {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.formEdit {
+  position: absolute;
+  left: 65px;
+  top: 53px;
+}
+.input-edit {
+  display: none;
+  height: 30px;
+  letter-spacing: 0.5px;
+  padding: 0 10px;
+  outline: none;
+  border-radius: 3px;
+  padding-right: 45px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  color: #000000;
+  border: none;
+  width: 717px;
+  height: 60px;
+  background-color: rgb(255, 209, 145);
+  padding-right: 45px;
+}
+.task-edit, .task-save {
+  width: 100px;
+}
+.task-delete, .task-edit, .task-save {
+  position: absolute;
+  z-index: 2;
+}
+.task-delete {
+  right: 0px;
+  top: -13px;
+}
+.task-edit {
+  right: 72px;
+  top: -13px;
+}
+.task-save {
+  right: 120px;
+  top: 0px;
 }
 @media (max-width: 830px) {
 .container {
