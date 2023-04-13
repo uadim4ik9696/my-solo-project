@@ -1,13 +1,17 @@
 const React = require('react');
 const Layout = require('../Layout');
-// const { Task } = require('../../../db/models');
 
-function checkUsername(username) {
-  const regex = /^[a-zA-Zа-яА-Я]+$/;
-  if (regex.test(username)) {
+function isValidUserName(username) {
+  const regexLetters = /^[a-zA-Zа-яА-Я]+$/;
+  const regexDuplicates = /([a-zA-Zа-яА-Я])\1{2,}/;
+
+  if (regexLetters.test(username)
+    || regexDuplicates.test(username)
+    || username.length < 3
+    || username.length > 20) {
     return `Привет, ${username} 👋 !`;
   }
-  return 'Привет, 👋 ! Интересное у тебя имя 🤭';
+  return `Привет, ${username} 👋 ! Интересное у тебя имя 🤭`;
 }
 
 module.exports = function TaskList({ user, tasks }) {
@@ -21,7 +25,7 @@ module.exports = function TaskList({ user, tasks }) {
           <button className="btn_add_task">+</button>
         </form>
         <div className="greetings">
-          {checkUsername(user.name)}
+          {isValidUserName(user.name)}
         </div>
         <div className="list">
           {tasks.map((task) => (
