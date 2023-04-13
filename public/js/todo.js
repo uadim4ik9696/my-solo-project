@@ -89,6 +89,7 @@ list?.addEventListener('click', async (e) => {
     const spanEdit = e.target.parentNode.parentNode.querySelector('.spanEdit');
     const inputEdit = document.createElement('input');
     inputEdit.type = 'text';
+    
     inputEdit.value = spanEdit.innerHTML;
     inputEdit.className = 'spanEdit inputEdit';
     inputEdit.addEventListener('blur', () => {
