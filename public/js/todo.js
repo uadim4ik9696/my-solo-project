@@ -85,11 +85,12 @@ list?.addEventListener('click', async (e) => {
   // todo: =-=-=-=-=реализовать редактирование задачи=-=-=-=-=
   // Обработчик клика по кнопке редактирования задачи
   if (e.target.tagName === 'SPAN') {
-    console.log(e.target);
-    const spanEdit = e.target.parentNode.parentNode.querySelector('.spanEdit');
+    const spanEdit = e.target.querySelector('.spanEdit');
+    console.log(spanEdit);
+
     const inputEdit = document.createElement('input');
     inputEdit.type = 'text';
-    
+
     inputEdit.value = spanEdit.innerHTML;
     inputEdit.className = 'spanEdit inputEdit';
     inputEdit.addEventListener('blur', () => {
