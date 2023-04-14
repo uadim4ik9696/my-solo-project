@@ -47,7 +47,6 @@ module.exports = function TaskList({ user, tasks }) {
                 {task.title}
               </span>
               <div className="btnTasks">
-                {/* <button className="task-edit" id={task.id}>Изменить</button> */}
                 <button className="task-delete" id={task.id}>Удалить</button>
               </div>
             </div>
