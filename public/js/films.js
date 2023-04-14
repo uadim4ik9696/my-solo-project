@@ -73,7 +73,6 @@ recognition.onresult = (event) => {
       </div>`;
     }
   }
-
   if (voiceRequest) {
     getFilm(voiceRequest);
   }

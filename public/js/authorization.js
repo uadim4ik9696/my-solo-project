@@ -2,11 +2,9 @@ const forms = {
   reg: document.querySelector('.registration-form'),
   login: document.querySelector('.login-form'),
 };
-
 function isValidEmail(email) {
   return /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/i.test(email);
 }
-
 function displayErrorMessage(message, parentElement) {
   const errTxt = document.createElement('p');
   errTxt.innerText = message;
@@ -16,7 +14,6 @@ function displayErrorMessage(message, parentElement) {
     errTxt.remove();
   }, 4000);
 }
-
 async function submitForm(form, endpoint) {
   const response = await fetch(endpoint, {
     method: 'POST',
@@ -29,10 +26,8 @@ async function submitForm(form, endpoint) {
       password: form.password.value,
     }),
   });
-
   return response;
 }
-
 forms.reg?.addEventListener('submit', async (e) => {
   e.preventDefault();
   if (isValidEmail(e.target.email.value)) {

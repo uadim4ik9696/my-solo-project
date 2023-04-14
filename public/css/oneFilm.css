@@ -3,7 +3,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* justify-content: center; */
 }
 .trailerDiv {
   padding: 10px;
@@ -21,7 +20,6 @@
 }
 .link:hover, .homelink:hover {
   color: #000000;
-
 }
 .description {
   background-color: #f1921b;
