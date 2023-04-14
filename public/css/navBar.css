@@ -35,13 +35,14 @@
   border-radius: 10px;
   box-shadow: 0 0 40px rgba(26, 23, 53, 0.6);
 }
-.navBarList:last-child {
+/* .navBarList:last-child {
   background: none;
   width: max-content;
-}
+} */
 .navBarList:hover {
   text-shadow: 1px 1px 10px #f2881f;
 }
 .navBarListImg {
   height: 30px;
+  width: 30px;
 }

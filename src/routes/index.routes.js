@@ -4,6 +4,8 @@ const Home = require('../views/pages/Home');
 const Login = require('../views/pages/Login');
 const Registration = require('../views/pages/Registration');
 const TaskList = require('../views/pages/TaskList');
+const renderComponent = require('../lib/renderComponent');
+
 
 const { Task } = require('../../db/models');
 const User = require('../views/pages/User');

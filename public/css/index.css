@@ -2,6 +2,8 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
 }
 .body {
   width: 100%;
@@ -22,7 +24,6 @@
   backdrop-filter: blur(10px);
 }
 .input {
-  font-family: 'Poppins', sans-serif;
   font-size: 20px;
   font-weight: 300;
   letter-spacing: 0.5px;
@@ -39,8 +40,9 @@
 }
 .homeForm {
   width: 100%;
-  min-height: 200px;
+  min-height: 300px;
   margin-top: 100px;
+  overflow: overlay;
 }
 .list {
   margin-top: 85px;
@@ -51,11 +53,12 @@
 }
 .greetings {
   position: absolute;
-  top: -70px;
+  top: 101px;
   font-size: 25px;
   font-weight: 300;
   color: #ffffff;
   margin: 20px;
+  z-index: 20;
 }
 .taska {
   width: 97%;
@@ -168,6 +171,3 @@ color: #b46300;
 width: 600px;
 }
 }
-
-
-

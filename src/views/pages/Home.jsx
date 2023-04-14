@@ -4,7 +4,7 @@ const Layout = require('../Layout');
 module.exports = function Home({ user }) {
   return (
     <Layout user={user}>
-      <form className="homeForm">
+      <div className="frosted-glass homeForm">
         <h3>TO DO</h3>
         <h4>Планируйте свою жизнь с легкостью</h4>
         <span className="">
@@ -15,7 +15,7 @@ module.exports = function Home({ user }) {
           уведомления, чтобы ничего не забыть. Начните работу над вашими
           задачами прямо сейчас и достигайте своих целей вместе с TO DO!
         </span>
-      </form>
+      </div>
     </Layout>
   );
 };

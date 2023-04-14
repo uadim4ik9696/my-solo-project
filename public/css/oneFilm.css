@@ -1,0 +1,35 @@
+.trailerDiv {
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
+}
+.trailerDiv {
+  padding: 10px;
+}
+.link, .homelink {
+  color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  text-decoration: none;
+  background-color: #f2901c;
+  border-radius: 3px;
+  border-bottom: none;
+  height: 35px;
+  width: max-content;
+  margin: 5px;
+}
+.link:hover, .homelink:hover {
+  color: #000000;
+
+}
+/* .ppp {
+  margin: 10px 0;
+} */
+.description {
+  background-color: #f1921b;
+  border-radius: 5px;
+  color: #000000;
+  padding: 10px;
+  line-height: 1.5;
+}

@@ -13,6 +13,9 @@ module.exports = function NavBar({ user }) {
           <a className="navBarList logout" href="/auth/logout">
             Log Out
           </a>
+          <a className="navBarList" href="/user">
+            <img className="navBarListImg" src="/img/user.png" alt="" />
+          </a>
         </>
       ) : (
         <>
@@ -24,9 +27,6 @@ module.exports = function NavBar({ user }) {
           </a>
         </>
       )}
-      <a className="navBarList" href="/user">
-        <img className="navBarListImg" src="/img/user.png" alt="" />
-      </a>
     </nav>
   );
 };

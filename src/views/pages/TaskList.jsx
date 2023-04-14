@@ -18,15 +18,15 @@ module.exports = function TaskList({ user, tasks }) {
   return (
     <Layout user={user}>
 
+      <div className="greetings">
+        {isValidUserName(user.name)}
+      </div>
       <div className="frosted-glass homeForm">
         <div className="button_task">&#60;</div>
         <form name="newTask" className="add_task">
           <input name="title" type="text" className="input_task input" placeholder="Запиши то, что не хочешь забыть" required />
           <button className="btn_add_task">+</button>
         </form>
-        <div className="greetings">
-          {isValidUserName(user.name)}
-        </div>
         <div className="list">
           {tasks.map((task) => (
             <div key={task.id} className="taska input">

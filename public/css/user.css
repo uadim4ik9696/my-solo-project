@@ -1,0 +1,197 @@
+body {
+  font-family:Verdana, Geneva, Tahoma, sans-serif
+}
+/* 
+img {
+  width: 100%;
+  height: 100%;
+} */
+
+.allFilmsDiv {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 20px;
+}
+
+.oneFilmDiv {
+  padding: 5px;
+  margin: 5px;
+  width: 240px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.oneFilmDiv:hover {
+  padding: 5px;
+  margin: 5px;
+  width: 242px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 0 10px rgba(0,0,0,0.9);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.oneFilmTitle {
+  margin: 10px;
+  text-align: center;
+}
+
+.img {
+  border-radius: 10px;
+  width: 100%;
+  height: 347px;
+}
+
+.oneFilmYear {
+  font-size: 12px;
+  margin: 7px;
+  text-align: center;
+}
+
+.audio-record-animation {
+  position: relative;
+}
+.audio-record-animation span {
+  display: block;
+  bottom: 0px;
+  width: 9px;
+  height: 5px;
+  background: rgb(161, 236, 251);
+  position: absolute;
+  animation: audio-wave 1.5s infinite ease-in-out;
+}
+.audio-record-animation span:nth-child(2) {
+  left: 11px;
+  animation-delay: 0.2s;
+}
+.audio-record-animation span:nth-child(3) {
+  left: 22px;
+  animation-delay: 0.4s;
+}
+.audio-record-animation span:nth-child(4) {
+  left: 33px;
+  animation-delay: 0.6s;
+}
+.audio-record-animation span:nth-child(5) {
+  left: 44px;
+  animation-delay: 0.8s;
+}
+@keyframes audio-wave {
+  0% {
+    height: 5px;
+    transform: translateY(0px);
+    background: rgb(161, 236, 251);
+  }
+  25% {
+    height: 40px;
+    transform: translateY(20px);
+    background: rgb(161, 236, 251);
+  }
+  50% {
+    height: 5px;
+    transform: translateY(0px);
+    background: rgb(161, 236, 251);
+  }
+  100% {
+    height: 5px;
+    transform: translateY(0px);
+    background: rgb(161, 236, 251);
+  }
+}
+
+.microphone-wrapper {
+  background: radial-gradient(circle farthest-corner at 50%  50%, #1f88d2 0%, #1f88d2 6.25%, #2e87d4 12.5%, #5b84d9 18.75%, #7e80da 25%, #9d7ad6 31.25%, #b973ce 37.5%, #d16cc2 43.75%, #e666b2 50%, #f6619f 56.25%, #ff608a 62.5%, #ff6474 68.75%, #ff6c5d 75%, #ff7846 81.25%, #f9852e 87.5%, #f28d1e 93.75%, #f28d1e 100%);
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.microphone-wrapper img:hover {
+  cursor: pointer;
+}
+.microphone__image {
+  width: 60px;
+  height: 60px;
+  margin-top: 0px;
+}
+.microphone__image:hover {
+  width: 105%;
+  height: 105%;
+  margin-top: -2px;
+  transition: 0.5s;
+}
+
+.audio-record-animation__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 45px;
+  margin-top: 20px;
+}
+
+.speech-recognition-section {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  font-size: 20px;
+}
+
+
+.trailerDiv {
+  height: 97vh;
+  width: 97vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 25px;
+}
+
+.link {
+  padding: 5px;
+  text-decoration: none;
+  color: black;
+  background-color: rgb(215, 215, 215);
+  border-radius: 10px;
+}
+
+.link:hover {
+  background-color: rgb(196, 196, 196);
+}
+
+.description {
+  width: 70vw;
+  background-color: rgb(215, 215, 215);
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.ppp {
+  margin-bottom: -20px;
+}
+
+.homelink {
+  padding: 5px;
+  text-decoration: none;
+  color: black;
+  background-color: rgb(215, 215, 215);
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.homelink:hover {
+  background-color: rgb(196, 196, 196);
+}
