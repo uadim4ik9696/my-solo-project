@@ -15,7 +15,6 @@ function isValidUserName(username) {
 }
 
 module.exports = function TaskList({ user, tasks }) {
-  
   return (
     <Layout user={user}>
 
