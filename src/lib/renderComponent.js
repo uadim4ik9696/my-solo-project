@@ -6,7 +6,6 @@ const React = require('react');
 const renderComponent = (reactComponent, props = {}, res) => {
   const reactElement = React.createElement(reactComponent, { ...props }, res);
   const html = ReactDOMServer.renderToStaticMarkup(reactElement);
-
   res.send(`<!DOCTYPE html>${html}`);
 };
 

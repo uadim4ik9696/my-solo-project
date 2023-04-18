@@ -47,7 +47,6 @@ forms.reg?.addEventListener('submit', async (e) => {
     );
   }
 });
-
 forms.login?.addEventListener('submit', async (e) => {
   e.preventDefault();
   if (isValidEmail(e.target.email.value)) {
