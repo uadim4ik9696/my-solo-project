@@ -10,14 +10,17 @@ router.post('/', async (req, res) => {
   const { user } = req.session;
   const { task } = req.body;
   try {
-    const newTask = await Task.create({
-      title: task,
-      userId: user.id,
-      status: false,
-    }, {
-      returning: true,
-      plain: true,
-    });
+    const newTask = await Task.create(
+      {
+        title: task,
+        userId: user.id,
+        status: false,
+      },
+      {
+        returning: true,
+        plain: true,
+      },
+    );
     res.status(200).json(newTask);
   } catch (error) {
     console.log(error);
